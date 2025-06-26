@@ -296,7 +296,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -314,7 +314,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -332,7 +332,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -350,7 +350,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -368,7 +368,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -386,7 +386,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -404,7 +404,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -423,7 +423,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
@@ -459,7 +459,7 @@ appBot.on("callback_query", (callbackQuery) => {
             {
                 parse_mode: "HTML",
                 "reply_markup": {
-                    "keyboard": [["Device"], ["Execute"]],
+                    "keyboard": [["Devices"], ["Execute"]],
                     'resize_keyboard': true
                 }
             }
