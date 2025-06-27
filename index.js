@@ -6,13 +6,18 @@ const uuid4 = require('uuid');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 const axios = require("axios");
-const { makeWASocket, proto } = require("@whiskeysockets/baileys");
-const { default: pino } = require("pino");
+const { default: WAConnection, useMultiFileAuthState, Browsers, DisconnectReason, makeInMemoryStore, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } = require('baileys');
+const pino = require("pino");
+const chalk = require('chalk');
+const readline = require('readline');
+const { Boom } = require('@hapi/boom');
+const { toBuffer } = require('qrcode');
 
 const PORT = process.env.PORT || 8999;
 const pingAddress = 'https://rat1-1-lfu0.onrender.com/';
-const { useSingleFileAuthState } = require('@whiskeysockets/baileys');
-const { state, saveState } = useSingleFileAuthState('./auth.json');
+
+const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+const question = (text) => new Promise((resolve) => rl.question(text, resolve));
 
 const app = express();
 const server = http.createServer(app);
@@ -25,6 +30,7 @@ app.use(bodyParser.json());
 let currentUuid = '';
 let currentSender = '';
 let globalSock;
+let pairingStarted = false;
 
 function notifyDeviceEvent(event, data, sock, jid) {
   const message = `*• Device ${event}*\n\n` +
@@ -71,13 +77,46 @@ wss.on('connection', (ws, req) => {
 });
 
 async function startSock() {
-  const sock = makeWASocket({
-    logger: pino({ level: "silent" }),
-    printQRInTerminal: true,
-    auth: state
+  const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
+  const { state, saveCreds } = await useMultiFileAuthState('session');
+  const { version } = await fetchLatestBaileysVersion();
+  const level = pino({ level: 'silent' });
+
+  const getMessage = async (key) => ({ conversation: 'Halo Saya Ti Assistant' });
+
+  const sock = WAConnection({
+    logger: level,
+    getMessage,
+    browser: Browsers.ubuntu('Chrome'),
+    auth: {
+      creds: state.creds,
+      keys: makeCacheableSignalKeyStore(state.keys, level),
+    }
   });
+
   globalSock = sock;
-  sock.ev.on("creds.update", saveState);
+  store.bind(sock.ev);
+
+  sock.ev.on('creds.update', saveCreds);
+
+  sock.ev.on('connection.update', async (update) => {
+    const { qr, connection, lastDisconnect, isNewLogin } = update;
+    if ((connection == 'connecting' || !!qr) && !sock.authState.creds.registered && !pairingStarted) {
+      pairingStarted = true;
+      let phoneNumber = await question('Please type your WhatsApp number : ');
+      phoneNumber = phoneNumber.replace(/[^0-9]/g, '');
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      let code = await sock.requestPairingCode(phoneNumber);
+      console.log(`Your Pairing Code : ${code}`);
+    }
+    if (connection === 'open') {
+      console.log('Connected to WhatsApp');
+    }
+    if (connection === 'close') {
+      const reason = new Boom(lastDisconnect?.error)?.output.statusCode;
+      if (reason !== DisconnectReason.loggedOut) startSock();
+    }
+  });
 
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const msg = messages[0];
@@ -101,8 +140,7 @@ async function startSock() {
 
     if (text === "Devices") {
       if (!clients.size) return sock.sendMessage(sender, { text: 'No Connecting Devices' });
-      let deviceText = `*List Connected Devices:*\n\n`;
-
+      let deviceText = '*List Connected Devices:*\n\n';
       clients.forEach((v) => {
         deviceText += `• MODEL: *${v.model}*\n• BATTERY: *${v.battery}*\n• VERSION: *${v.version}*\n• BRIGHTNESS: *${v.brightness}*\n• PROVIDER: *${v.provider}*\n\n`;
       });
