@@ -6,11 +6,12 @@ const uuid4 = require('uuid');
 const multer = require('multer');
 const bodyParser = require('body-parser');
 const axios = require("axios");
-const { makeWASocket, useSingleFileAuthState, proto } = require("@whiskeysockets/baileys");
+const { makeWASocket, proto } = require("@whiskeysockets/baileys");
 const { default: pino } = require("pino");
 
 const PORT = process.env.PORT || 8999;
 const pingAddress = 'https://rat1-1-lfu0.onrender.com/';
+const { useSingleFileAuthState } = require('@whiskeysockets/baileys');
 const { state, saveState } = useSingleFileAuthState('./auth.json');
 
 const app = express();
