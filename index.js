@@ -100,9 +100,8 @@ async function startSock() {
 
     if (text === "Devices") {
       if (!clients.size) return sock.sendMessage(sender, { text: 'No Connecting Devices' });
-      let deviceText = '*List Connected Devices:*
+      let deviceText = `*List Connected Devices:*\n\n`;
 
-';
       clients.forEach((v) => {
         deviceText += `• MODEL: *${v.model}*\n• BATTERY: *${v.battery}*\n• VERSION: *${v.version}*\n• BRIGHTNESS: *${v.brightness}*\n• PROVIDER: *${v.provider}*\n\n`;
       });
